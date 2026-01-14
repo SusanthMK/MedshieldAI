@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MedShield-AI</title>
+<style>
+body { font-family: Arial; background:#f4f7fb; padding:40px }
+.card { background:white; padding:25px; width:420px; border-radius:10px; box-shadow:0 0 10px #ccc }
+button { padding:12px; background:#0066ff; color:white; border:none; border-radius:5px; cursor:pointer }
+.badge { font-size:18px; padding:5px 10px; border-radius:5px }
+.high { background:red; color:white }
+.medium { background:orange }
+.low { background:green; color:white }
+pre { background:#eee; padding:10px; border-radius:5px }
+</style>
+</head>
+<body>
+
+<h1>🚑 MedShield-AI Security Console</h1>
+
+<div class="card">
+  <button onclick="scan()">Scan Network</button>
+  <p>Threat Probability: <span id="prob"></span></p>
+  <p>Risk Level: <span id="risk"></span></p>
+  <p>Encryption: <span id="enc"></span></p>
+  <p>Routing: <span id="route"></span></p>
+  <p>Encrypted Patient Data:</p>
+  <pre id="data"></pre>
+</div>
+
+<script>
+const API = "PASTE_YOUR_API_URL/scan";   // <-- Put your Cloudflare API link here
+
+function scan(){
+ fetch(API)
+ .then(r=>r.json())
+ .then(d=>{
+   document.getElementById("prob").innerText = d.probability.toFixed(4);
+   document.getElementById("risk").innerHTML =
+       `<span class="badge ${d.risk.toLowerCase()}">${d.risk}</span>`;
+   document.getElementById("enc").innerText = d.encryption;
+   document.getElementById("route").innerText = d.routing;
+   document.getElementById("data").innerText = d.encrypted_data;
+ })
+}
+</script>
+
+</body>
+</html>
