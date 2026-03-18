@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![AI](https://img.shields.io/badge/AI-Intrusion%20Detection-red)
+![Status](https://img.shields.io/badge/Status-Completed-green)
+
 # Intrusion-Aware Dynamic Encryption for Self-Healing Medical Communication
 
 ## Overview
@@ -162,6 +166,23 @@ The system demonstrates:
 * Secure encrypted communication
 * Automatic response to cyber threats
 
+### ROC Curve
+![ROC](results/ROC_Curve.png)
+
+### Confusion Matrix
+![Confusion](results/Confusion_Matrix.png)
+
+### Classification Report
+![Report](results/Classification_Report.png)
+
+### IDS Detection Performance
+![Performance](results/IDS_Detection_Performance.png)
+
+### Intrusion Detection Output
+![Detection](results/Intrusion_Detection.png)
+
+### User Interface
+![UI](results/User_Interface.png)
 (Refer to graphs and UI in repository) 
 
 ## Repository Structure
@@ -220,3 +241,4 @@ This project introduces a self-healing security system that combines AI-based in
 * Integration with live network traffic
 * Advanced deep learning models
 * Cloud-based secure healthcare systems
+
